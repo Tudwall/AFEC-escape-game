@@ -2,56 +2,71 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  
-
   <title>Jeu Médiéval</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
   <link href="jeu.css" rel="stylesheet" />
-
- 
 </head>
 <body>
-<!--
-    Énigme :
-    "Le mot de passe est inscrit dans l'ombre du royaume."
-    Inspecte le CSS, cherche la clef...
--->
   <div class="container">
     <h1>⚔️ Royaume Maudit ⚔️</h1>
-    <h2>"Bienvenue a toi jeune écuyer"</h2>
+    <h2>"Bienvenue à toi jeune écuyer"</h2>
 
     <div class="menu">
-      <button id="room2Bouton">room 2 </button>
-     
-      <button id="Abandon">Abandonne</button>
+      <button id="room2Bouton" class="btn-alert1">room 2</button>
+      <button id="Abandon" class="btn-alert2">Abandonne</button>
     </div>
 
-      <div class="enigme">
-  <p>Entre le mot de passe pour continuer :</p>
-  <input type="text" id="motDePasse" placeholder="Mot de passe" />
-  <button id="validerEnigme">Valider</button>
-</div>
+    <div class="enigme">
+      <p>Entre le mot de passe pour continuer :</p>
+      <input type="text" id="motDePasse" placeholder="Mot de passe" />
+      <button id="validerEnigme" class="btn-alert3">Valider</button>
+    </div>
   </div>
 
-<script>
-  document.getElementById('validerEnigme').addEventListener('click', () => {
-    const input = document.getElementById('motDePasse').value.trim().toUpperCase();
-    if (input === 'DRAGON') {
-      window.location.href = 'room2/'; 
-    } else {
-      alert('Mot de passe incorrect.');
-    }
-  });
+  
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="modal-message">Message ici</p>
+    </div>
+  </div>
+<!-- Que veux tu devenir à la fin de ta quête ? -->
+  <script>
 
-  document.getElementById('room2Bouton').addEventListener('click', () => {
-      alert('Trop facile mon gueu !!!');
+    function showModal(message) {
+      const modal = document.getElementById('modal');
+      const modalMessage = document.getElementById('modal-message');
+      modalMessage.textContent = message;
+      modal.style.display = "block";  
+    }
+
+    
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.style.display = "none";  
+    }
+
+    
+    document.querySelector('.close').addEventListener('click', closeModal);
+    
+    
+    document.getElementById('validerEnigme').addEventListener('click', () => {
+      const input = document.getElementById('motDePasse').value.trim().toUpperCase();
+      if (input === 'CHEVALIER') {
+        window.location.href = 'room2/';
+      } else {
+        showModal('Mot de passe incorrect.');
+      }
+    });
+
+    
+    document.getElementById('room2Bouton').addEventListener('click', () => {
+      showModal('Trop facile mon gueu !!!');
     });
 
     document.getElementById('Abandon').addEventListener('click', () => {
-      alert('Traître à la couronne !!!');
+      showModal('Traître à la couronne !!!');
     });
-</script>
-
+  </script>
 </body>
-
-
 </html>
