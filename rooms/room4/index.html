@@ -1,0 +1,60 @@
+<!-- room4.html -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Escape Game – Room 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Room 4 : Le Temple Secret</h1>
+    <p>Résous chaque énigme pour avancer…</p>
+
+    <!-- 1) Indice caché dans le DOM & DevTools -->
+    <div hidden>L'indice caché est : "ouvrir la console"</div>
+
+    <!-- 2) Indice mobile-only -->
+    <div class="mobile-indice" aria-hidden="true">Indice mobile : "Regarde le bas de l’écran"</div>
+
+    <!-- 3) Indice accessible uniquement via lecteur d’écran -->
+    <div aria-hidden="false" class="sr-only">Indice vocal : "écoute le titre"</div>
+
+    <!-- 4) Séquence de clics en JS -->
+    <p>Clique dans cet ordre : 🔺, 🔷, 🔴</p>
+    <button class="seq-btn" data-shape="triangle">🔺</button>
+    <button class="seq-btn" data-shape="diamond">🔷</button>
+    <button class="seq-btn" data-shape="circle">🔴</button>
+    <div id="seq-indice" class="hidden">Bravo ! Tu as trouvé : "la forme mystère"</div>
+
+    <!-- 5) Formulaire de validation -->
+    <form id="enigme-form">
+        <label for="reponse">Quel est le mot magique ?</label>
+        <input type="text" id="reponse" placeholder="ta réponse">
+        <button type="submit">Valider</button>
+    </form>
+    <div id="form-indice" class="hidden">Exact ! Tu peux passer à la suite.</div>
+
+    <!-- 6) Révélation par action DOM -->
+    <button id="reveal-btn">Révèle le parchemin</button>
+    <div id="dom-indice" class="hidden">Le parchemin dit : "Regarde le code source"</div>
+
+    <!-- 7) Stockage dans localStorage -->
+    <button id="store-btn">Emmagasine l’indice</button>
+
+    <!-- 8) Chiffrement Base64 -->
+    <div>Indice codé : U2VjcmV0MTIz</div>
+
+    <!-- 9) Géolocalisation -->
+    <button id="geo-btn">Où suis-je ?</button>
+    <div id="geo-indice"></div>
+
+    <!-- 10) Paramètre d’URL -->
+    <a href="?indice=Le%20tr%C3%A9sor%20est%20%C3%A0%20gauche">Voir l’indice dans l’URL</a>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
