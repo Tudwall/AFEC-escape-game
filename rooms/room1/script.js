@@ -40,7 +40,7 @@ function showModal(message) {
 
     
     document.getElementById('room2Bouton').addEventListener('click', () => {
-      showModal('Trop facile mon gueu !!!');
+      showModal('Trop facile mon gueux !!!');
     });
 
     document.getElementById('Abandon').addEventListener('click', () => {

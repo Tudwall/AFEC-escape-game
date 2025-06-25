@@ -1,9 +1,7 @@
 const enigmes = [
   {
-    name: 'Le Sceau du Gardien',
-    description:
-      'Pour passer, prononce le mot magique qui désigne la couleur du manteau du mage.',
-    answer: 'incendio',
+    name: 'Le Sceau du Sabre',
+   
   },
   {
     name: "L'Énigme des Runes",
