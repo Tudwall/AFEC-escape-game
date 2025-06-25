@@ -26,6 +26,12 @@ const enigmes = [
       'Quel langage magique sert à styliser les parchemins numériques (pages web) ?',
     answer: 'css',
   },
+  {},
+  {
+    name: "",
+    description: "",
+    answer: ""
+  }
 ];
 
 export default enigmes;
