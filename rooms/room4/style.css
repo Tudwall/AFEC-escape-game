@@ -35,3 +35,51 @@ button {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+/* Technique avancée 2: coquille contextmenu */
+#coquille {
+  position: absolute;
+  top: 80vh;
+  left: 5vw;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+}
+
+/* Technique avancée 4: pixel invisible */
+#tiny {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 1px;
+  height: 1px;
+  background: #f4f4f4;
+}
+
+/* Technique avancée 3: drag & drop */
+.hidden-ghost {
+  width: 50px;
+  cursor: grab;
+}
+#dropzone {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+/* Technique avancée 5: bottom indice */
+#bottom-indice {
+  margin-top: 200vh; /* hors écran */
+}
+
+/* alias classique */
+.hidden {
+  display: none;
+}
+
+/* optionnel: Konami hint visible après JS */
+.konami-hint {
+  font-size: 0.8em;
+  color: transparent;
+}
