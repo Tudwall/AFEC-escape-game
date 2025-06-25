@@ -75,6 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  // quand il clique sur l’image, on dévoile la suite
+  document.querySelector(".wall-inscription").addEventListener("click", (e) => {
+    e.currentTarget.classList.add("revealed");
+  });
 
   // 5) formulaire
   document.getElementById("enigme-form").addEventListener("submit", (e) => {
