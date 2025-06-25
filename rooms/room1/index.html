@@ -20,7 +20,7 @@
     <h2>"Bienvenue a toi jeune écuyer"</h2>
 
     <div class="menu">
-      <button>room 2 </button>
+      <button id="room2Bouton">room 2 </button>
      
       <button>Abandonne</button>
     </div>
@@ -41,6 +41,10 @@
       alert('Mot de passe incorrect.');
     }
   });
+
+  document.getElementById('room2Bouton').addEventListener('click', () => {
+      alert('Trop facile mon gueux !!!)');
+    });
 </script>
 
 </body>
