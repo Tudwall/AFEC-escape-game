@@ -10,7 +10,11 @@
  
 </head>
 <body>
-
+<!--
+    Énigme :
+    "Le mot de passe est inscrit dans l'ombre du royaume."
+    Inspecte le CSS, cherche la clef...
+-->
   <div class="container">
     <h1>⚔️ Royaume Maudit ⚔️</h1>
     <h2>"Bienvenue a toi jeune écuyer"</h2>
@@ -20,7 +24,26 @@
      
       <button>Abandonne</button>
     </div>
+
+      <div class="enigme">
+  <p>Entre le mot de passe pour continuer :</p>
+  <input type="text" id="motDePasse" placeholder="Mot de passe" />
+  <button id="validerEnigme">Valider</button>
+</div>
   </div>
 
+<script>
+  document.getElementById('validerEnigme').addEventListener('click', () => {
+    const input = document.getElementById('motDePasse').value.trim().toUpperCase();
+    if (input === 'DRAGON') {
+      window.location.href = 'room2/'; 
+    } else {
+      alert('Mot de passe incorrect.');
+    }
+  });
+</script>
+
 </body>
+
+
 </html>
