@@ -1,4 +1,28 @@
 // script.js
+// === Gestion de la progression ===
+const puzzles = {
+  sequence: false,
+  form: false,
+  dom: false,
+  storage: false,
+  geo: false,
+  urlParam: false,
+  konami: false,
+  context: false,
+  drag: false,
+  hover: false,
+  bottom: false,
+};
+
+function checkRoom4Completion() {
+  // Si tous les drapeaux sont passés à true…
+  if (Object.values(puzzles).every((v) => v)) {
+    alert(" Bravo ! Tu as fini la room 4, on passe à la room 5.");
+    // Appel à ta fonction globale pour charger la room suivante
+    loadRoom("room5");
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // 1) console.log pour DevTools
   console.log("Indice DevTools : cherches dans le DOM caché.");
@@ -12,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
         pos++;
         if (pos === seq.length) {
           document.getElementById("seq-indice").classList.remove("hidden");
+          puzzles.sequence = true; // Marquer l'énigme comme résolu
+          checkRoom4Completion(); // = test global
         }
       } else {
         pos = 0; // reset si ordre incorrect
@@ -27,18 +53,24 @@ document.addEventListener("DOMContentLoaded", () => {
       "abracadabra"
     ) {
       document.getElementById("form-indice").classList.remove("hidden");
+      puzzles.form = true; // formulaire ok
+      checkRoom4Completion(); //
     }
   });
 
   // 6) reveal DOM
   document.getElementById("reveal-btn").addEventListener("click", () => {
     document.getElementById("dom-indice").classList.remove("hidden");
+    puzzles.dom = true; // DOM révélé
+    checkRoom4Completion(); //
   });
 
   // 7) stockage
   document.getElementById("store-btn").addEventListener("click", () => {
     localStorage.setItem("escape-indice", "Rendez-vous au vieux chêne");
     alert("Indice enregistré ! Regarde dans le localStorage.");
+    puzzles.storage = true; // Stockage ok
+    checkRoom4Completion(); //
   });
 
   // 8) Base64 décodage
@@ -56,6 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
           ).textContent = `Tu es à ${latitude.toFixed(4)}, ${longitude.toFixed(
             4
           )} — indice : suis le nord.`;
+          puzzles.geo = true; // Géolocalisation ok
+          checkRoom4Completion();
         },
         () => {
           document.getElementById("geo-indice").textContent =
@@ -69,5 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   if (params.has("indice")) {
     console.log("Indice URL :", params.get("indice"));
+    puzzles.urlParam = true; // Paramètre URL ok
+    checkRoom4Completion();
   }
 });
