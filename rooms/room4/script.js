@@ -50,6 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       kp = 0;
     }
+    document.getElementById("coquille").addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+      alert("Indice contextuel : écoute le vent…");
+      puzzles.context = true;
+      checkRoom4Completion();
+    });
   });
 
   // 4) séquence de clics
