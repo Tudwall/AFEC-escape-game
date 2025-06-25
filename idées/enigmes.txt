@@ -1,0 +1,10 @@
+1. Accessibilité/ textBlancBlanc-NoirNoir
+2. Hidden / Media Query
+3. Router => redirect à page suivante
+4. Questions de cours QCM 
+5. Animation mega slow
+6. Formulaire retrouver le mdp ?
+7. Mets faux à tout et le mot de passe s'affiche
+8. manipulation de string dans console
+9. NGGYU!
+10.
