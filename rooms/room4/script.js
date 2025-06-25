@@ -26,6 +26,31 @@ function checkRoom4Completion() {
 document.addEventListener("DOMContentLoaded", () => {
   // 1) console.log pour DevTools
   console.log("Indice DevTools : cherches dans le DOM caché.");
+  const konami = [
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "KeyB",
+    "KeyA",
+  ];
+  let kp = 0;
+  window.addEventListener("keydown", (e) => {
+    if (e.code === konami[kp]) {
+      kp++;
+      if (kp === konami.length) {
+        document.getElementById("konami-hint").classList.remove("hidden");
+        puzzles.konami = true;
+        checkRoom4Completion();
+      }
+    } else {
+      kp = 0;
+    }
+  });
 
   // 4) séquence de clics
   const seq = ["triangle", "diamond", "circle"];
