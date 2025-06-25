@@ -4,6 +4,12 @@ const enigmes = [
     description: "-.. ..-_-- --- .-. ... .!",
     answer: "resolve",
   },
+  {},
+  {
+    name: "",
+    description: "",
+    answer: ""
+  }
 ];
 
 export default enigmes;
