@@ -1,0 +1,12 @@
+body {
+  background-color: #000;
+  background-image: url('../../assets/img/egypte.jpg');
+  background-size: cover; /* l'image couvre tout l'écran */
+  background-position: center; /* centrée */
+  background-repeat: no-repeat; /* pas de répétition */
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  padding: 2em;
+}
