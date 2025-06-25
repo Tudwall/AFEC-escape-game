@@ -7,3 +7,11 @@ window.validateAnswer = function (answer) {
     }
   });
 };
+
+/* const boomBoom = document.getElementById("boom-boom");
+boomBoom.addEventListener("volumechange", () => {
+    boomBoom.volume = 100
+}) */
+
+const boomBoom = new Audio("../../assets/sound/boomboomboomboom.mp3");
+boomBoom.play();
