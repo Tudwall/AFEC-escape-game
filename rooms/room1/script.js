@@ -23,6 +23,7 @@ function PlaySentence(text) {
   const morse = words.map(PlayWord);
   console.log(morse);
 }
+
 function PlayWord(word) {
   word.split("").map(asciiToMorse);
 }
