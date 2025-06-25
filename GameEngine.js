@@ -1,6 +1,6 @@
-import { EnigmaManager } from './enigmes/EnigmaManager.js';
-import enigmes from './enigmes/enigmes.js';
-import { RoomManager } from './RoomManager.js';
+import { EnigmaManager } from "./enigmes/EnigmaManager.js";
+import enigmes from "./enigmes/enigmes.js";
+import { RoomManager } from "./RoomManager.js";
 
 export class GameEngine {
   constructor() {
@@ -16,6 +16,15 @@ export class GameEngine {
   }
 
   async start() {
+    // ─── MODE DEV ────────────────────────────────────────
+    // Force immédiatement la room 4 pour tests rapides
+    this.currentIndex = 4;
+    this.roomManager.setCurrentRoom(4);
+    await this.loadCurrentRoom();
+    return; // STOP ici : on ne passe pas par la landing ni énigmes
+    // ─── FIN MODE DEV ────────────────────────────────────
+
+    // code normal :
     await this.loadCurrentRoom();
   }
 
@@ -36,7 +45,7 @@ export class GameEngine {
     if (this.currentIndex !== 0) {
       await this.enigmas.loadCurrentEnigma(document.body);
 
-      document.addEventListener('answer-submitted', (event) => {
+      document.addEventListener("answer-submitted", (event) => {
         this.handleAnswer(event.detail.value);
       });
     } else {
@@ -45,7 +54,7 @@ export class GameEngine {
   }
 
   async handleAnswer(userInput) {
-    console.log('User input received:', userInput);
+    console.log("User input received:", userInput);
     const currentEnigma = this.enigmas.getCurrentEnigma(this.currentIndex);
 
     const userAnswer = userInput.trim().toLowerCase();
@@ -58,7 +67,7 @@ export class GameEngine {
       this.roomManager.setCurrentRoom(this.currentIndex);
       await this.loadCurrentRoom();
     } else {
-      alert('Wrong answer! Try again.');
+      alert("Wrong answer! Try again.");
     }
   }
 }

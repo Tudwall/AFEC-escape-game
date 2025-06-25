@@ -11,6 +11,14 @@
     <p id="konami-hint" class="hidden">
         Tape ↑↑↓↓←→←→ B A pour un indice secret
     </p>
+    <div id="arrow-pad" class="hidden-for-desktop">
+        <button data-shape="ArrowUp">↑</button>
+        <button data-shape="ArrowDown">↓</button>
+        <button data-shape="ArrowLeft">←</button>
+        <button data-shape="ArrowRight">→</button>
+        <button id="btnB">B</button>
+        <button id="btnA">A</button>
+    </div>
 
 
     <!-- 2) Indice mobile-only -->
@@ -22,6 +30,11 @@
 
     <!-- 3) Indice accessible uniquement via lecteur d’écran -->
     <div aria-hidden="false" class="sr-only">Indice vocal : "écoute le titre"</div>
+    <!-- rooms/room4/index.html, dans #room4-template -->
+    <figure class="wall-inscription">
+        <img src="../assets/img/Gravure.png" alt="Gravure de flèches, tu verras…">
+        <figcaption style="visibility:hidden;">↑ ↑ ↓ ↓ ← → ← →</figcaption>
+    </figure>
 
     <!-- 4) Séquence de clics en JS -->
     <p>Clique dans cet ordre : 🔺, 🔷, 🔴</p>
@@ -47,6 +60,9 @@
 
     <!-- 8) Chiffrement Base64 -->
     <div>Indice codé : U2VjcmV0MTIz</div>
+
+
+
 
     <!-- 9) Géolocalisation -->
     <button id="geo-btn">Où suis-je ?</button>

@@ -73,13 +73,38 @@ button {
   margin-top: 200vh; /* hors écran */
 }
 
-/* alias classique */
-.hidden {
-  display: none;
-}
-
 /* optionnel: Konami hint visible après JS */
 .konami-hint {
   font-size: 0.8em;
   color: transparent;
+  outline: 2px dashed red;
+}
+.wall-inscription {
+  width: 120px;
+  margin: 2em auto;
+  cursor: pointer;
+}
+.wall-inscription figcaption {
+  font-family: monospace;
+  text-align: center;
+  margin-top: 0.5em;
+}
+/* Lorsque le joueur clique sur l’inscription, on révèle le texte */
+.wall-inscription.revealed figcaption {
+  visibility: visible;
+}
+.hidden-for-desktop {
+  display: none;
+}
+@media (max-width: 768px) {
+  .hidden-for-desktop {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    margin-top: 1em;
+  }
+  #arrow-pad button {
+    font-size: 1.2em;
+    padding: 0.5em;
+  }
 }
