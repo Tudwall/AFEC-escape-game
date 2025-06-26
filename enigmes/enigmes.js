@@ -1,8 +1,8 @@
 const enigmes = [
   {
-    name: "'-.-",
-    description: "ROOM 3",
-    answer: "code morse",
+    name: "(-.-)/",
+    description: "-.. ..-   -- --- .-. ... .   .... . .... . !",
+    answer: "resolve",
   },
 ];
 
