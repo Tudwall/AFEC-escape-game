@@ -50,7 +50,7 @@ export class GameEngine {
 
     const userAnswer = userInput.trim().toLowerCase();
     const correctAnswer = currentEnigma.answer.toLowerCase();
-
+    console.log( correctAnswer, userAnswer==correctAnswer)
     if (userAnswer === correctAnswer) {
       this.enigmas.setCurrentEnigma(this.currentIndex);
       this.currentIndex++;

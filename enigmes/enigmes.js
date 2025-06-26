@@ -6,9 +6,9 @@ const enigmes = [
     answer: 'incendio',
   },
   {
-    name: "L'Énigme des Runes",
-    description: 'Additionne les runes : 3 + 5. Quel est le nombre ?',
-    answer: '8',
+    name: "Sherlock Holmes",
+    description: 'Bien Joue! Etes vous prets pour chercher que est stocke sur notre site?',
+    answer: 'cinq cent cinquante cinq',
   },
   {
     name: 'Le Cri du Dragon',

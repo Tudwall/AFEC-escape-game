@@ -11,3 +11,4 @@ allButons.forEach((button) => {
     /*     window.submitAnswer(userInput); */
   });
 });
+  
