@@ -1,0 +1,91 @@
+body {
+  background-color: #023E8A;
+  background-image: url('../../assets/img/walrus.png');
+  background-size: 100px 100px;
+  /* l'image couvre tout l'écran */
+  background-position: center;
+  /* centrée */
+  background-repeat: space;
+  /* pas de répétition */
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  padding: 2em;
+}
+
+button {
+  background-color: #fff;
+  margin: 0;
+  padding: 0.5em 1em;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  border: none;
+}
+
+button:hover {
+  background-color: lightgray;
+}
+
+#play-button,
+#reset-button {
+  border-radius: 6px;
+}
+
+#answer-button {
+  border-radius: 0 10px 10px 0%;
+}
+
+input {
+  border-radius: 10px 0 0 10px;
+  margin: 0;
+  border: none;
+  padding: 0.5em 1em;
+  font: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
+#room3-template {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+#morse {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+#enigma-number {
+  display: hidden;
+}
+
+#enigme-description {
+  background-color: rgba(0, 0, 0, 0.61);
+  box-shadow: rgba(0, 0, 0, 0.61) 0 0 10px;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 0.5em 1em;
+}
+
+.morse-light {
+  background-color: black;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+#div-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}

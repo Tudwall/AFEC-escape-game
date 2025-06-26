@@ -1,91 +1,111 @@
+/* rooms/room4/style.css */
+
+/* Base styles */
 body {
-  background-color: #023E8A;
-  background-image: url('../../assets/img/walrus.png');
-  background-size: 100px 100px;
-  /* l'image couvre tout l'écran */
-  background-position: center;
-  /* centrée */
-  background-repeat: space;
-  /* pas de répétition */
-  background-attachment: fixed;
-  color: #fff;
+  font-family: sans-serif;
+  background: #f4f4f4;
+  color: #222;
   text-align: center;
-  font-family: 'Orbitron', sans-serif;
   padding: 2em;
 }
 
+.hidden {
+  display: none;
+}
+
 button {
-  background-color: #fff;
-  margin: 0;
+  margin: 0.5em;
   padding: 0.5em 1em;
-  font: inherit;
   cursor: pointer;
-  outline: inherit;
-  border: none;
 }
 
-button:hover {
-  background-color: lightgray;
+/* 2) Mobile-only */
+.mobile-indice {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile-indice {
+    display: block;
+  }
 }
 
-#play-button,
-#reset-button {
-  border-radius: 6px;
+/* 3) Screen-reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
-#answer-button {
-  border-radius: 0 10px 10px 0%;
+/* Advanced elements */
+
+/* 2) Clic-droit contextuel */
+.coquille {
+  position: absolute;
+  top: 80vh;
+  left: 5vw;
+  width: 10px;
+  height: 10px;
+  background: transparent;
 }
 
-input {
-  border-radius: 10px 0 0 10px;
-  margin: 0;
-  border: none;
-  padding: 0.5em 1em;
-  font: inherit;
+/* 3) Drag & Drop fantôme */
+.ghost {
+  width: 50px;
+  cursor: grab;
 }
-
-input:focus {
-  outline: none;
-}
-
-#room3-template {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-}
-
-#morse {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-}
-
-#enigma-number {
-  display: hidden;
-}
-
-#enigme-description {
-  background-color: rgba(0, 0, 0, 0.61);
-  box-shadow: rgba(0, 0, 0, 0.61) 0 0 10px;
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  padding: 0.5em 1em;
-}
-
-.morse-light {
-  background-color: black;
+.dropzone {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   width: 100px;
   height: 100px;
-  border-radius: 100%;
 }
 
-#div-buttons {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
+/* 4) Hover prolongé */
+.tiny {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 1px;
+  height: 1px;
+  background: #f4f4f4;
+}
+
+/* 5) Intersection Observer */
+#bottom-indice {
+  margin-top: 200vh; /* placé hors écran */
+}
+
+/* 1) Konami hint */
+#konami-hint {
+  font-size: 0.8em;
+  margin: 0.5em 0;
+  /* plus de color:transparent */
+}
+
+/* 8) Base64 hint */
+#base64 {
+  margin: 1em 0;
+}
+
+/* Finale */
+#final-phrase {
+  margin-top: 2em;
+}
+#phrase-text {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+#konami-clue {
+  display: inline-block;
+  margin: 1em auto;
+  cursor: pointer;
+}
+#konami-clue img {
+  filter: contrast(0.8) brightness(1.2);
 }
