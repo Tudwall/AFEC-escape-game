@@ -1,4 +1,6 @@
-/* style.css */
+/* rooms/room4/style.css */
+
+/* Base styles */
 body {
   font-family: sans-serif;
   background: #f4f4f4;
@@ -6,15 +8,18 @@ body {
   text-align: center;
   padding: 2em;
 }
+
 .hidden {
   display: none;
 }
+
 button {
   margin: 0.5em;
   padding: 0.5em 1em;
+  cursor: pointer;
 }
 
-/* 2) mobile only */
+/* 2) Mobile-only */
 .mobile-indice {
   display: none;
 }
@@ -24,7 +29,7 @@ button {
   }
 }
 
-/* 3) screen-reader only */
+/* 3) Screen-reader only */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -35,8 +40,11 @@ button {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-/* Technique avancée 2: coquille contextmenu */
-#coquille {
+
+/* Advanced elements */
+
+/* 2) Clic-droit contextuel */
+.coquille {
   position: absolute;
   top: 80vh;
   left: 5vw;
@@ -45,8 +53,21 @@ button {
   background: transparent;
 }
 
-/* Technique avancée 4: pixel invisible */
-#tiny {
+/* 3) Drag & Drop fantôme */
+.ghost {
+  width: 50px;
+  cursor: grab;
+}
+.dropzone {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+/* 4) Hover prolongé */
+.tiny {
   position: absolute;
   bottom: 2px;
   right: 2px;
@@ -55,56 +76,28 @@ button {
   background: #f4f4f4;
 }
 
-/* Technique avancée 3: drag & drop */
-.hidden-ghost {
-  width: 50px;
-  cursor: grab;
-}
-#dropzone {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: 100px;
-  height: 100px;
-}
-
-/* Technique avancée 5: bottom indice */
+/* 5) Intersection Observer */
 #bottom-indice {
-  margin-top: 200vh; /* hors écran */
+  margin-top: 200vh; /* placé hors écran */
 }
 
-/* optionnel: Konami hint visible après JS */
-.konami-hint {
+/* 1) Konami hint */
+#konami-hint {
   font-size: 0.8em;
   color: transparent;
-  outline: 2px dashed red;
+  margin: 0.5em 0;
 }
-.wall-inscription {
-  width: 120px;
-  margin: 2em auto;
-  cursor: pointer;
+
+/* 8) Base64 hint */
+#base64 {
+  margin: 1em 0;
 }
-.wall-inscription figcaption {
-  font-family: monospace;
-  text-align: center;
-  margin-top: 0.5em;
+
+/* Finale */
+#final-phrase {
+  margin-top: 2em;
 }
-/* Lorsque le joueur clique sur l’inscription, on révèle le texte */
-.wall-inscription.revealed figcaption {
-  visibility: visible;
-}
-.hidden-for-desktop {
-  display: none;
-}
-@media (max-width: 768px) {
-  .hidden-for-desktop {
-    display: flex;
-    justify-content: center;
-    gap: 0.5em;
-    margin-top: 1em;
-  }
-  #arrow-pad button {
-    font-size: 1.2em;
-    padding: 0.5em;
-  }
+#phrase-text {
+  font-weight: bold;
+  font-size: 1.2em;
 }
