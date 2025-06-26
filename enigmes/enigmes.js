@@ -1,8 +1,13 @@
 const enigmes = [
   {
+<<<<<<< zoyberg
+    name: 'Le Sceau du Sabre',
+   
+=======
     name: "(-.-)/",
     description: "-.. ..-_-- --- .-. ... .!",
     answer: "resolve",
+>>>>>>> dev
   },
   {},
   {
