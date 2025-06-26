@@ -1,8 +1,15 @@
 const enigmes = [
   {
+<<<<<<< zoyberg
     name: 'Le Sceau du Sabre',
    
+=======
+    name: "(-.-)/",
+    description: "-.. ..-_-- --- .-. ... .!",
+    answer: "resolve",
+>>>>>>> dev
   },
+  {},
   {
     name: "L'Énigme des Runes",
     description: 'Additionne les runes : 3 + 5. Quel est le nombre ?',
@@ -24,6 +31,12 @@ const enigmes = [
       'Quel langage magique sert à styliser les parchemins numériques (pages web) ?',
     answer: 'css',
   },
+  {},
+  {
+    name: "",
+    description: "",
+    answer: ""
+  }
 ];
 
 export default enigmes;

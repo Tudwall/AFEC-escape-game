@@ -1,14 +1,10 @@
-console.info('Room 1 script loaded');
-
-const allButons = document.querySelectorAll('button');
-allButons.forEach((button) => {
-  button.addEventListener('click', (event) => {
-    const userInput = event.target.dataset.id || event.target.textContent;
-    const answerEvent = new CustomEvent('answer-submitted', {
-      detail: { value: userInput },
-    });
-    document.dispatchEvent(answerEvent);
-    /*     window.submitAnswer(userInput); */
+window.validateAnswer = function (answer) {
+  return new Promise((resolve, reject) => {
+    if (answer.toLowerCase() === 'alohomora') {
+      resolve();
+    } else {
+      reject('Nope! Hint: This spell unlocks doors.');
+    }
   });
 });
 
@@ -46,3 +42,4 @@ function showModal(message) {
     document.getElementById('Abandon').addEventListener('click', () => {
       showModal('Traître à la couronne !!!');
     });
+};

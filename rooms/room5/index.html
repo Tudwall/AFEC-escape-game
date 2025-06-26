@@ -1,0 +1,19 @@
+<div id="room1-template">
+  <div class="escape-game">
+    <div class="room" id="room1">
+      <h2>Chambre Secrète</h2>
+      <p>
+        Trouvez le code caché pour sortir ! les etapes a suivre: tableau
+        [2,0,3,5],etape1:index1// etape2: Extrait une portion du tableau
+        arr.-----()//etape3:Ajoute un élément à la fin arr.----()
+      </p>
+      <input type="text" id="codeInput" placeholder="Entrez le code" />
+      <button onclick="checkCode()">Valider</button>
+    </div>
+    <div class="room" id="room2" style="display: none">
+      <h2>Félicitations !</h2>
+      <p>Vous avez réussi à sortir ! 🎉</p>
+      <button onclick="resetGame()">Recommencer</button>
+    </div>
+  </div>
+</div>

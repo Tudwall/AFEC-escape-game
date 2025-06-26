@@ -1,0 +1,27 @@
+1. Accessibilité/ textBlancBlanc-NoirNoir
+23. Message d'alerte
+
+11. 3 Erreurs => PUNISH THEM!!! 
+12. Ajouter Indices
+19. Page d'acceuil => General Rules
+
+2. Hidden / Media Query
+3. Router => redirect à page suivante
+4. Questions de cours QCM
+5. Animation mega slow
+6. Formulaire retrouver le mdp ?
+7. Mets faux à tout et le mot de passe s'affiche
+8. manipulation de string dans console
+9. NGGYU!
+13. BluePrince Room Photos == Mots de passe
+14. Origine TimeStamp
+15. Résolution de page avec CSS grid
+16. Mot de passe avec une convention de nomage particuler => kebab-case
+17. Utilisation de médias (vidéo/audio)
+18. mot de passe = code hexa à retrouver à partir d'une couleur
+20. Overload de merde => tout enlever pout acceder au contenu / scroll disabled
+21. Answer On timer like a real escape game
+22. mdp == Coordonnées google maps
+24. Jigsaw si on y arrive.
+
+10. Hexa + César + Anglais

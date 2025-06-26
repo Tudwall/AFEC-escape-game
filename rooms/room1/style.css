@@ -1,3 +1,4 @@
+<<<<<<< zoyberg
 
 
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Press+Start+2P&display=swap');
@@ -186,3 +187,10 @@ input[type="text"]:focus {
   font-family: 'MedievalSharp', cursive;
   margin-top: 20px;
 }
+=======
+#room-container #room1-template {
+    height:100%;
+    width:100%;
+   animation: 1s infinite epilespy;
+}
+>>>>>>> dev
