@@ -11,17 +11,18 @@ validateButton.addEventListener('click',() => {
 })
 
 const checkAnswer = (userInput) => {
-  if (userInput === 'cinq cent cinquante cinq') {
-    const answerEvent = new CustomEvent('answer-submitted', {
+  const answerEvent = new CustomEvent('answer-submitted', {
       detail: { value: userInput },
     });
     document.dispatchEvent(answerEvent);
-  } else {
-    wrongAnswer.classList.remove('hiden');
-    errorMessage.textContent = (userInput == 555)
-      ? 'Pas si facile!'
-      : 'Nope!';
-}
+//   if (userInput === 'cinq cent cinquante cinq') {
+    
+//   } else {
+//     wrongAnswer.classList.remove('hiden');
+//     errorMessage.textContent = (userInput == 555)
+//       ? 'Pas si facile!'
+//       : 'Nope!';
+// }
 }
 
 // window.validateAnswer = function (answer) {

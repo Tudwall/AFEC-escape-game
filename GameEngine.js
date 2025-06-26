@@ -25,6 +25,7 @@ export class GameEngine {
 
   async loadCurrentRoom() {
     const roomNumber = this.roomManager.getCurrentRoom();
+    console.log(roomNumber)
     if (roomNumber > enigmes.length) {
       document.body.innerHTML =
         "<h1>🎉 Congratulations! You've finished the game! 🎉</h1>";
@@ -32,7 +33,6 @@ export class GameEngine {
     }
 
     await this.roomManager.loadRoom(roomNumber);
-
     if (this.currentIndex !== 0) {
       await this.enigmas.loadCurrentEnigma(document.body);
 
@@ -50,15 +50,13 @@ export class GameEngine {
 
     const userAnswer = userInput.trim().toLowerCase();
     const correctAnswer = currentEnigma.answer.toLowerCase();
-    console.log( correctAnswer, userAnswer==correctAnswer)
     if (userAnswer === correctAnswer) {
       this.enigmas.setCurrentEnigma(this.currentIndex);
       this.currentIndex++;
-
       this.roomManager.setCurrentRoom(this.currentIndex);
       await this.loadCurrentRoom();
     } else {
-      alert('Wrong answer! Try again.');
+      alert('Wrong answer! Try again. ');
     }
   }
 }
