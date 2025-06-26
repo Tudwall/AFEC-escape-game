@@ -24,7 +24,7 @@ setTimeout(()=> {
 
 function giveHint() {
   setTimeout(() => {
-    console.log("I'LL SHOOT YOU")
+    console.log("I'LL PAINT A TARGET")
   }, hintTime)
   setTimeout(() => {
     console.log("RIGHT")
@@ -33,7 +33,7 @@ function giveHint() {
     console.log("BETWEEN")
   }, hintTime + 1000)
   setTimeout(() => {
-    console.log("THE")
+    console.log("YOUR")
   }, hintTime + 1500)
   setTimeout(() => {
     console.log("EYES")
