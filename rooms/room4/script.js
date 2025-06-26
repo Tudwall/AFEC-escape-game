@@ -15,6 +15,14 @@ const puzzles = {
 };
 const answers = {};
 
+// Affiche temporairement un message d’erreur ou d’indice
+function showFeedback(msg) {
+  const fb = document.getElementById("feedback");
+  fb.textContent = msg;
+  fb.classList.remove("hidden");
+  setTimeout(() => fb.classList.add("hidden"), 3000);
+}
+
 function checkCompletion() {
   if (Object.values(puzzles).every((v) => v)) {
     const phrase = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -109,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
           checkCompletion();
         }
       } else pos = 0;
+      showFeedback("Mauvais ordre, recommence la séquence !");
     })
   );
   // Hover prolongé (advanced)
@@ -125,17 +134,19 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("tiny")
     .addEventListener("mouseleave", () => clearTimeout(hoverTimer));
 
-  // 5) Formulaire
+  // 5) Formulaire & IntersectionObserver
   document.getElementById("enigme-form").addEventListener("submit", (e) => {
     e.preventDefault();
-    if (e.target.reponse.value.trim().toLowerCase() === "abracadabra") {
+    const resp = e.target.reponse.value.trim().toLowerCase();
+    if (resp === "abracadabra") {
       document.getElementById("indice5").classList.remove("hidden");
       puzzles[5] = true;
       answers[5] = "Temple";
       checkCompletion();
+    } else {
+      showFeedback("Ce n'est pas le mot magique, continue à chercher !");
     }
   });
-  // Intersection Observer (advanced)
   new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry) => {
