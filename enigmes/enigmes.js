@@ -2,8 +2,15 @@ const enigmes = [
   {
     name: 'Le Sceau du Sabre',
   },
+<<<<<<< HEAD
   {},
   {
+=======
+  {
+
+  },
+  {
+>>>>>>> dev
     name: "(-.-)/",
     description: "-.. ..-_-- --- .-. ... .!",
     answer: "resolve",
