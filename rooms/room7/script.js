@@ -41,17 +41,11 @@ function giveHint() {
 }
 
 clickMe.addEventListener("click", () => {
+  qrcode.generate("3430c2b033302735302e36224e203839c2b030332731362e362257")
   setTimeout(()=> {
     console.info("SO YOU FOUND ME ?")
   }, 5000)
   setTimeout(()=> {
     console.info("SEEMS LIKE YOU KNOW YOU HEXACTLY WHAT YOU'RE DOING")
   },5500)
-  setTimeout(()=> {
-    console.info("DO YOU WANNA SEE THE TRUTH ?")
-  }, 6000)
 })
-
-window.showMe = function () {
-  qrcode.generate("3430c2b033302735302e36224e203839c2b030332731362e362257")
-}
