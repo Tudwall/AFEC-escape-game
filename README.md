@@ -59,7 +59,7 @@ Pour éviter de voir le contenu HTML sans CSS, un état de chargement est ajout�
 
 ```css
 body.loading #room-container {
-  visibility: hidden;
+	visibility: hidden;
 }
 ```
 
@@ -70,3 +70,17 @@ body.loading #room-container {
     Si le JS ne se charge pas, vérifie la présence et le type MIME de script.js.
 
     Les erreurs MIME indiquent souvent un fichier manquant ou un serveur mal configuré.
+
+## Attribution des rooms
+
+Room 1: [Nicolas](https://github.com/zoyberg-max)
+
+Room 2: [Artem](https://github.com/syss69)
+
+Room 3: [Balthazar](https://github.com/CBalthazar)
+
+Room 4: [Elise](https://github.com/seliegarrigues)
+
+Room 5: [Fatah](https://github.com/Fatah872218)
+
+Room 6: [Pierre](https://github.com/Tudwall)
