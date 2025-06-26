@@ -3,25 +3,19 @@ const DASH_TIME = 3 * DOT_TIME;
 const SYMBOL_BREAK = DOT_TIME;
 const LETTER_BREAK = DOT_TIME * 3;
 const WORD_BREAK = DOT_TIME * 7;
-const solution = [
+const SOLUTION = [
   ["-.--", "---", "..-"],
   [".--.", ".-.", "---", "--", "..", "...", ".", "-.."],
   [".."],
   [".-", ".--", ".-", "..", "-"],
 ];
 
-window.validateAnswer = function (answer) {
-  return new Promise((resolve, reject) => {
-    if (answer.toLowerCase() === "alohomora") {
-      resolve();
-    } else {
-      reject("Nope! Hint: This spell unlocks doors.");
-    }
-  });
-};
+let STOP_MORSE = false;
+let morse_sequence;
 
 const morseLight = document.querySelector("#morse-light");
 const playButton = document.querySelector("#play-button");
+const resetButton = document.querySelector("#reset-button");
 const passwordInput = document.querySelector("#password");
 const submitButton = document.querySelector("#answer-button");
 
@@ -60,6 +54,10 @@ async function playDot() {
 
 async function playSentence(morseSentence) {
   for (const morseWord of morseSentence) {
+    if (STOP_MORSE) {
+      console.log("break");
+      break;
+    }
     await playWord(morseWord);
     await sleep(WORD_BREAK);
   }
@@ -67,6 +65,10 @@ async function playSentence(morseSentence) {
 
 async function playWord(morseWord) {
   for (const morseLetter of morseWord) {
+    if (STOP_MORSE) {
+      console.log("break");
+      break;
+    }
     await playLetter(morseLetter);
     await sleep(LETTER_BREAK);
   }
@@ -74,6 +76,10 @@ async function playWord(morseWord) {
 
 async function playLetter(morseLetter) {
   for (const symbol of morseLetter) {
+    if (STOP_MORSE) {
+      console.log("break");
+      break;
+    }
     if (symbol === ".") {
       await playDot();
     } else if (symbol === "-") {
@@ -81,20 +87,6 @@ async function playLetter(morseLetter) {
     }
     await sleep(SYMBOL_BREAK);
   }
-}
-
-function sentenceToMorse(text) {
-  const words = text.toLowerCase().split(" ");
-  const morse = words.map(wordToMorse);
-  return morse;
-}
-
-function wordToMorse(word) {
-  return word.split("").map(letterToMorse);
-}
-
-function letterToMorse(letter) {
-  return MORSE_MAP[letter];
 }
 
 function checkAnswer(event) {
@@ -135,6 +127,13 @@ const MORSE_MAP = {
   z: "--..",
 };
 
-playButton.addEventListener("click", () => {
-  playSentence(solution);
+playButton.addEventListener("click", async () => {
+  morse_sequence = playSentence(SOLUTION);
+});
+
+resetButton.addEventListener("click", async () => {
+  console.log(morse_sequence);
+  STOP_MORSE = true;
+  await morse_sequence;
+  STOP_MORSE = false;
 });
