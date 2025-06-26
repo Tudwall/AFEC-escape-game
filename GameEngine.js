@@ -16,15 +16,6 @@ export class GameEngine {
   }
 
   async start() {
-    // ─── MODE DEV ────────────────────────────────────────
-    // Force immédiatement la room 4 pour tests rapides
-    this.currentIndex = 4;
-    this.roomManager.setCurrentRoom(4);
-    await this.loadCurrentRoom();
-    return; // STOP ici : on ne passe pas par la landing ni énigmes
-    // ─── FIN MODE DEV ────────────────────────────────────
-
-    // code normal :
     await this.loadCurrentRoom();
   }
 
