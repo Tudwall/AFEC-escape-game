@@ -2,13 +2,11 @@ const enigmes = [
   {
     name: 'Le Sceau du Sabre',
   },
-  {name: "(-.-)/",
-    description: "-.. ..-_-- --- .-. ... .!",
-    answer: "resolve",},
+  {},
   {
-    name: "L'Énigme des Runes",
-    description: 'Additionne les runes : 3 + 5. Quel est le nombre ?',
-    answer: '8',
+    name: "(-.-)/",
+    description: "-.. ..-_-- --- .-. ... .!",
+    answer: "resolve",
   },
   {
     name: 'Le Cri du Dragon',
@@ -26,7 +24,6 @@ const enigmes = [
       'Quel langage magique sert à styliser les parchemins numériques (pages web) ?',
     answer: 'css',
   },
-  {},
   {
     name: "",
     description: "",
