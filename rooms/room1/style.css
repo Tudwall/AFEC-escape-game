@@ -1,0 +1,5 @@
+#room-container #room1-template {
+    height:100%;
+    width:100%;
+   animation: 1s infinite epilespy;
+}
