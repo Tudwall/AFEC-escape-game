@@ -1,0 +1,111 @@
+/* rooms/room4/style.css */
+
+/* Base styles */
+body {
+  font-family: sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  text-align: center;
+  padding: 2em;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+/* 2) Mobile-only */
+.mobile-indice {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile-indice {
+    display: block;
+  }
+}
+
+/* 3) Screen-reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Advanced elements */
+
+/* 2) Clic-droit contextuel */
+.coquille {
+  position: absolute;
+  top: 80vh;
+  left: 5vw;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+}
+
+/* 3) Drag & Drop fantôme */
+.ghost {
+  width: 50px;
+  cursor: grab;
+}
+.dropzone {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+/* 4) Hover prolongé */
+.tiny {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 1px;
+  height: 1px;
+  background: #f4f4f4;
+}
+
+/* 5) Intersection Observer */
+#bottom-indice {
+  margin-top: 200vh; /* placé hors écran */
+}
+
+/* 1) Konami hint */
+#konami-hint {
+  font-size: 0.8em;
+  margin: 0.5em 0;
+  /* plus de color:transparent */
+}
+
+/* 8) Base64 hint */
+#base64 {
+  margin: 1em 0;
+}
+
+/* Finale */
+#final-phrase {
+  margin-top: 2em;
+}
+#phrase-text {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+#konami-clue {
+  display: inline-block;
+  margin: 1em auto;
+  cursor: pointer;
+}
+#konami-clue img {
+  filter: contrast(0.8) brightness(1.2);
+}
