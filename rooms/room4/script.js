@@ -46,6 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "KeyA",
   ];
   let kp = 0;
+  // Affiche la séquence en clair quand on clique sur la gravure
+  document.getElementById("konami-clue").addEventListener("click", (e) => {
+    document.getElementById("konami-hint").classList.remove("hidden");
+  });
   window.addEventListener("keydown", (e) => {
     if (e.code === konami[kp]) {
       kp++;

@@ -1,86 +1,70 @@
-<!-- room4.html -->
-
-
-
+<!-- rooms/room4/index.html -->
 <div id="room4-template">
     <h1>Room 4 : Le Temple Secret</h1>
-    <p>Résous chaque énigmes pour révéler tous les mots-clés et former la phrase finale.</p>
-
-    <!-- 1) Indice caché dans le DOM & DevTools -->
+    <p>Résous chaque énigme pour révéler tous les mots-clés (10) et former la phrase finale.</p>
+    <figure id="konami-clue" title="Clique ici pour un indice">
+        <img src="../assets/img/Gravure.png" alt="Gravure mystérieuse" width="100">
+        <figcaption class="sr-only">
+            ↑ ↑ ↓ ↓ ← → ← → B A
+        </figcaption>
+    </figure>
+    <!-- 1) DevTools & Konami Code -->
     <div hidden id="indice1">Mot1: "Explore"</div>
     <p id="konami-hint" class="hidden">
         Tape ↑↑↓↓←→←→ B A pour voir le message caché
     </p>
-    <div id="arrow-pad" class="hidden-for-desktop">
-        <button data-shape="ArrowUp">↑</button>
-        <button data-shape="ArrowDown">↓</button>
-        <button data-shape="ArrowLeft">←</button>
-        <button data-shape="ArrowRight">→</button>
-        <button id="btnB">B</button>
-        <button id="btnA">A</button>
-    </div>
 
 
-    <!-- 2) Indice mobile-only -->
+
+    <!-- 2) Mobile-only & Clic droit contextuel -->
     <div id="indice2" class="mobile-indice hidden">Mot2: "chaque"</div>
     <div id="coquille" title="rien ici" class="coquille"></div>
-</div>
 
+    <!-- 3) Screen-reader & Drag & Drop fantôme -->
+    <div id="indice3" aria-hidden="false" class="sr-only">Mot3: "recoin"</div>
+    <img id="ghost" src="../assets/img/masque.png" draggable="true" alt="fantôme" class="ghost hidden-ghost">
+    <div id="dropzone" class="dropzone"></div>
 
-<!-- 3) Screen-reader & Drag & Drop fantôme -->
-<div id="indice3" aria-hidden="false" class="sr-only">Mot3: "recoin"</div>
-<img id="ghost" src="../assets/img/masque.png" draggable="true" alt="fantôme" class="ghost hidden-ghost">
-<div id="dropzone" class="dropzone"></div>
-<figure class="wall-inscription">
-    <img src="../assets/img/Gravure.png" alt="Gravure de flèches, tu verras…">
-    <figcaption style="visibility:hidden;">↑ ↑ ↓ ↓ ← → ← →</figcaption>
-</figure>
+    <!-- 4) Clics séquentiels & Hover prolongé -->
+    <p>Clique dans cet ordre : 🔺, 🔷, 🔴</p>
+    <button class="seq-btn" data-shape="triangle">🔺</button>
+    <button class="seq-btn" data-shape="diamond">🔷</button>
+    <button class="seq-btn" data-shape="circle">🔴</button>
+    <div id="indice4" class="hidden">Mot4: "du"</div>
+    <div id="tiny" class="tiny"></div>
 
-<!-- 4) Clics séquentiels & Hover prolongé -->
-<p>Clique dans cet ordre : 🔺, 🔷, 🔴</p>
-<button class="seq-btn" data-shape="triangle">🔺</button>
-<button class="seq-btn" data-shape="diamond">🔷</button>
-<button class="seq-btn" data-shape="circle">🔴</button>
-<div id="indice4" class="hidden">Mot4: "du"</div>
-<div id="tiny" class="tiny"></div>
+    <!-- 5) Formulaire & Intersection Observer -->
+    <form id="enigme-form">
+        <label for="reponse">Quel est le mot magique ?</label>
+        <input type="text" id="reponse" placeholder="...">
+        <button type="submit">Valider</button>
+    </form>
+    <div id="indice5" class="hidden">Mot5: "Temple"</div>
+    <div id="bottom-indice" class="hidden">Bravo, tu as scrollé jusqu’en bas !</div>
 
-<!-- 5) Formulaire & Intersection Observer -->
-<form id="enigme-form">
-    <label for="reponse">Quel est le mot magique ?</label>
-    <input type="text" id="reponse" placeholder="...">
-    <button type="submit">Valider</button>
-</form>
-<div id="indice5" class="hidden">Mot5: "Temple"</div>
-<div id="bottom-indice" class="hidden">Bravo, tu as scrollé jusqu’en bas !</div>
+    <!-- 6) DOM reveal & Obfuscation -->
+    <button id="reveal-btn">Découvre le parchemin</button>
+    <div id="indice6" class="hidden">Mot6: "secret"</div>
 
-<!-- 6) DOM reveal & Obfuscation -->
-<button id="reveal-btn">Découvre le parchemin</button>
-<div id="indice6" class="hidden">Mot6: "secret"</div>
+    <!-- 7) localStorage & CustomEvent -->
+    <button id="store-btn">Stocke l’indice</button>
+    <div id="indice7" class="hidden">Mot7: "et"</div>
 
-<!-- 7) localStorage & CustomEvent -->
-<button id="store-btn">Stocke l’indice</button>
-<div id="indice7" class="hidden">Mot7: "et"</div>
+    <!-- 8) Base64 décodage -->
+    <div id="base64">Indice codé : U2VqZXVy</div>
+    <div id="indice8" class="hidden">Mot8: "Séjour"</div>
 
-<!-- 8) Base64 décodage -->
-<div id="base64">Indice codé : U2VqZXVy</div>
-<div id="indice8" class="hidden">Mot8: "Séjour"</div>
+    <!-- 9) Géolocalisation & CustomEvent -->
+    <button id="geo-btn">Donne-moi ma position</button>
+    <div id="indice9" class="hidden">Mot9: "au"</div>
 
+    <!-- 10) URL paramètre -->
+    <a href="?indice=inoubliable" id="url-link">Voir l’indice</a>
+    <div id="indice10" class="hidden">Mot10: "inoubliable"</div>
 
-
-
-
-<!-- 9) Géolocalisation & CustomEvent -->
-<button id="geo-btn">Donne-moi ma position</button>
-<div id="indice9" class="hidden">Mot9: "au"</div>
-
-<!-- 10) URL paramètre -->
-<a href="?indice=inoubliable" id="url-link">Voir l’indice</a>
-<div id="indice10" class="hidden">Mot10: "inoubliable"</div>
-
-<!-- Phrase finale -->
-<div id="final-phrase" class="hidden">
-    <h2>Phrase finale :</h2>
-    <p id="phrase-text"></p>
-</div>
-
+    <!-- Phrase finale -->
+    <div id="final-phrase" class="hidden">
+        <h2>Phrase finale :</h2>
+        <p id="phrase-text"></p>
+    </div>
 </div>

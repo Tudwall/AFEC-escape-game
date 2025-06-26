@@ -84,8 +84,8 @@ button {
 /* 1) Konami hint */
 #konami-hint {
   font-size: 0.8em;
-  color: transparent;
   margin: 0.5em 0;
+  /* plus de color:transparent */
 }
 
 /* 8) Base64 hint */
@@ -100,4 +100,12 @@ button {
 #phrase-text {
   font-weight: bold;
   font-size: 1.2em;
+}
+#konami-clue {
+  display: inline-block;
+  margin: 1em auto;
+  cursor: pointer;
+}
+#konami-clue img {
+  filter: contrast(0.8) brightness(1.2);
 }
