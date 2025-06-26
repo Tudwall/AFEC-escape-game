@@ -1,15 +1,10 @@
 const enigmes = [
   {
-<<<<<<< zoyberg
     name: 'Le Sceau du Sabre',
-   
-=======
-    name: "(-.-)/",
-    description: "-.. ..-_-- --- .-. ... .!",
-    answer: "resolve",
->>>>>>> dev
   },
-  {},
+  {name: "(-.-)/",
+    description: "-.. ..-_-- --- .-. ... .!",
+    answer: "resolve",},
   {
     name: "L'Énigme des Runes",
     description: 'Additionne les runes : 3 + 5. Quel est le nombre ?',

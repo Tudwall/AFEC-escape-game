@@ -6,7 +6,7 @@ window.validateAnswer = function (answer) {
       reject('Nope! Hint: This spell unlocks doors.');
     }
   });
-});
+};
 
 function showModal(message) {
       const modal = document.getElementById('modal');
@@ -42,4 +42,3 @@ function showModal(message) {
     document.getElementById('Abandon').addEventListener('click', () => {
       showModal('Traître à la couronne !!!');
     });
-};
