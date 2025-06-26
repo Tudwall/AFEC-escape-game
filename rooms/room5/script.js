@@ -1,17 +1,12 @@
-function checkCode() {
-  const codeInput = document.getElementById("codeInput").value;
-  const correctCode = "0slicepush";
+export function initRoom() {
+  const validateBtn = document.getElementById("validate-answer");
+  const codeInput = document.getElementById("code-input");
 
-  if (codeInput === correctCode) {
-    document.getElementById("room1").style.display = "none";
-    document.getElementById("room2").style.display = "block";
-  } else {
-    alert("Code incorrect ! Essayez encore.");
-  }
-}
-
-function resetGame() {
-  document.getElementById("room1").style.display = "block";
-  document.getElementById("room2").style.display = "none";
-  document.getElementById("codeInput").value = "";
+  validateBtn.addEventListener("click", () => {
+    const userAnswer = codeInput.value.trim().toLowerCase();
+    const answerEvent = new CustomEvent("answer-submitted", {
+      detail: { value: userAnswer },
+    });
+    document.dispatchEvent(answerEvent);
+  });
 }

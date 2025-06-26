@@ -18,10 +18,10 @@ export class EnigmaManager {
     const currentEnigma = this.enigmes[this.currentIndex];
     document.title = `Enigma ${this.currentIndex + 1}: ${currentEnigma.name}`;
 
-    const h1 = document.querySelector('h1');
+    const h1 = document.querySelector("h1");
     h1.textContent = `Enigma ${this.currentIndex + 1}: ${currentEnigma.name}`;
 
-    const description = document.getElementById('enigme-description');
+    const description = document.getElementById("enigme-description");
     description.textContent = currentEnigma.description;
   }
 
