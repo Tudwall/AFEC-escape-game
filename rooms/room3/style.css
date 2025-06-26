@@ -1,11 +1,11 @@
 body {
-  background-color: purple;
-  background-image: url('../../assets/img/walrus.jpg');
-  background-size: cover;
+  background-color: #023E8A;
+  background-image: url('../../assets/img/walrus.png');
+  background-size: 100px 100px;
   /* l'image couvre tout l'écran */
   background-position: center;
   /* centrée */
-  background-repeat: no-repeat;
+  background-repeat: space;
   /* pas de répétition */
   background-attachment: fixed;
   color: #fff;
@@ -28,7 +28,8 @@ button:hover {
   background-color: lightgray;
 }
 
-#play-button {
+#play-button,
+#reset-button {
   border-radius: 6px;
 }
 
@@ -48,7 +49,7 @@ input:focus {
   outline: none;
 }
 
-#room1-template {
+#room3-template {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,9 +65,27 @@ input:focus {
   gap: 1em;
 }
 
+#enigma-number {
+  display: hidden;
+}
+
+#enigme-description {
+  background-color: rgba(0, 0, 0, 0.61);
+  box-shadow: rgba(0, 0, 0, 0.61) 0 0 10px;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 0.5em 1em;
+}
+
 .morse-light {
   background-color: black;
   width: 100px;
   height: 100px;
   border-radius: 100%;
+}
+
+#div-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
 }

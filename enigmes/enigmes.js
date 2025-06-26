@@ -1,7 +1,7 @@
 const enigmes = [
   {
     name: "(-.-)/",
-    description: "-.. ..-   -- --- .-. ... .   .... . .... . !",
+    description: "-.. ..-_-- --- .-. ... .!",
     answer: "resolve",
   },
 ];
