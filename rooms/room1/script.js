@@ -4,25 +4,10 @@ const SYMBOL_BREAK = DOT_TIME;
 const LETTER_BREAK = DOT_TIME * 3;
 const WORD_BREAK = DOT_TIME * 7;
 const solution = [
-  [
-    "-.--",
-    "---",
-    "..-]",
-    "[.--.",
-    ".-.",
-    "---",
-    "--",
-    "..",
-    "...",
-    ".",
-    "-..]",
-    "[..]",
-    "[.-",
-    ".--",
-    ".-",
-    "..",
-    "-",
-  ],
+  ["-.--", "---", "..-"],
+  [".--.", ".-.", "---", "--", "..", "...", ".", "-.."],
+  [".."],
+  [".-", ".--", ".-", "..", "-"],
 ];
 
 window.validateAnswer = function (answer) {
@@ -150,8 +135,6 @@ const MORSE_MAP = {
   z: "--..",
 };
 
-const morse = sentenceToMorse("you promised i await");
-console.log(morse.join("],["));
 playButton.addEventListener("click", () => {
   playSentence(solution);
 });
