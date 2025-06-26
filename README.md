@@ -73,9 +73,14 @@ body.loading #room-container {
 
 ## Attribution des rooms
 
-Room 1: Nicolas
-Room 2: Artem
-Room 3: Balthazar
-Room 4: Elise
-Room 5: Fatah
-Room 6: Pierre
+Room 1: [Nicolas](https://github.com/zoyberg-max)
+
+Room 2: [Artem](https://github.com/syss69)
+
+Room 3: [Balthazar](https://github.com/CBalthazar)
+
+Room 4: [Elise](https://github.com/seliegarrigues)
+
+Room 5: [Fatah](https://github.com/Fatah872218)
+
+Room 6: [Pierre](https://github.com/Tudwall)
